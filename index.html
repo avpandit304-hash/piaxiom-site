@@ -2,15 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Piaxiom AI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Piaxiom AI</title>
 
 <style>
+
+/* GLOBAL */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #020617;
+  background: radial-gradient(circle at 20% 20%, #0f172a, #020617 70%);
   color: white;
+  overflow-x: hidden;
+}
+
+/* GLOW BACKGROUND */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(250,204,21,0.15), transparent);
+  top: -100px;
+  left: -100px;
+  filter: blur(120px);
+  animation: float 10s infinite alternate;
+}
+
+@keyframes float {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(200px,100px); }
 }
 
 /* NAVBAR */
@@ -24,16 +45,22 @@ body {
   top: 0;
   background: rgba(2,6,23,0.8);
   backdrop-filter: blur(10px);
+  z-index: 100;
 }
 
 .nav img {
-  height: 40px;
+  height: 60px;
 }
 
 .nav a {
   color: #aaa;
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: #facc15;
 }
 
 /* HERO */
@@ -47,26 +74,36 @@ body {
   padding-top: 80px;
 }
 
-h1 {
-  font-size: 64px;
-  background: linear-gradient(90deg, #facc15, #eab308);
+.hero h1 {
+  font-size: 72px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #facc15, #fde68a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-p {
+.hero p {
   color: #9ca3af;
   max-width: 700px;
+  margin-top: 15px;
+  font-size: 18px;
 }
 
+/* BUTTON */
 .cta {
   margin-top: 30px;
   padding: 14px 30px;
   background: linear-gradient(90deg, #facc15, #eab308);
   color: black;
-  border-radius: 10px;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(250,204,21,0.5);
 }
 
 /* SECTIONS */
@@ -77,9 +114,16 @@ section {
 
 h2 {
   font-size: 36px;
+  margin-bottom: 10px;
 }
 
-/* CARDS */
+p {
+  color: #9ca3af;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -87,20 +131,29 @@ h2 {
   margin-top: 40px;
 }
 
+/* CARDS */
 .card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(250,204,21,0.2);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(250,204,21,0.15);
   padding: 25px;
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
+  border-radius: 20px;
+  transition: 0.4s;
 }
 
 .card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-12px) scale(1.02);
   border-color: #facc15;
-  box-shadow: 0 0 20px rgba(250,204,21,0.3);
+  box-shadow: 0 20px 40px rgba(250,204,21,0.2);
 }
+
+/* FOOTER */
+.footer {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
+
 </style>
 </head>
 
@@ -108,7 +161,7 @@ h2 {
 
 <!-- NAVBAR -->
 <div class="nav">
-  <img src="logo.png" alt="Piaxiom Logo">
+  <img src="Logo.png" alt="Piaxiom Logo">
   <div>
     <a href="#">Solutions</a>
     <a href="#">Technology</a>
@@ -119,9 +172,32 @@ h2 {
 <!-- HERO -->
 <div class="hero">
   <h1>Piaxiom AI</h1>
-  <p>Autonomous intelligence layer for industrial systems.</p>
+  <p>
+    Autonomous intelligence layer for industrial systems that continuously learns, adapts, and optimizes manufacturing performance.
+  </p>
   <a class="cta" href="mailto:your@email.com">Get in Touch</a>
 </div>
+
+<!-- PLATFORM SECTION -->
+<section>
+  <h2>Industrial AI Platform</h2>
+  <p>From raw machine signals to autonomous decision-making systems.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Data Layer</h3>
+      <p>PLC, Sensors, OPC-UA integration</p>
+    </div>
+    <div class="card">
+      <h3>AI Engine</h3>
+      <p>Predictive models, anomaly detection</p>
+    </div>
+    <div class="card">
+      <h3>Execution Layer</h3>
+      <p>Automated feedback into machines</p>
+    </div>
+  </div>
+</section>
 
 <!-- SOLUTIONS -->
 <section>
@@ -150,19 +226,16 @@ h2 {
   </p>
 </section>
 
-<!-- ARCHITECTURE (YOUR USP 🔥) -->
-<section>
-  <h2>Architecture</h2>
-  <p>
-    Built on scalable microservices with edge computing, cloud AI, and real-time data pipelines.
-  </p>
-</section>
-
 <!-- CTA -->
 <section>
   <h2>Start Your AI Transformation</h2>
   <a class="cta" href="mailto:your@email.com">Contact Piaxiom</a>
 </section>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Piaxiom AI — Industrial Intelligence Redefined
+</div>
 
 </body>
 </html>
