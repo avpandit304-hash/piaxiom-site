@@ -9,8 +9,31 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #0b0f19, #020617);
+  background: #020617;
   color: white;
+}
+
+/* NAVBAR */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(2,6,23,0.8);
+  backdrop-filter: blur(10px);
+}
+
+.nav img {
+  height: 40px;
+}
+
+.nav a {
+  color: #aaa;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
 /* HERO */
@@ -21,6 +44,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding-top: 80px;
 }
 
 h1 {
@@ -33,7 +57,6 @@ h1 {
 p {
   color: #9ca3af;
   max-width: 700px;
-  line-height: 1.6;
 }
 
 .cta {
@@ -46,10 +69,14 @@ p {
   font-weight: bold;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
+}
+
+h2 {
+  font-size: 36px;
 }
 
 /* CARDS */
@@ -61,8 +88,8 @@ section {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(250, 204, 21, 0.2);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(250,204,21,0.2);
   padding: 25px;
   border-radius: 16px;
   backdrop-filter: blur(10px);
@@ -72,54 +99,66 @@ section {
 .card:hover {
   transform: translateY(-10px);
   border-color: #facc15;
-  box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
-}
-
-/* HEADINGS */
-h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  box-shadow: 0 0 20px rgba(250,204,21,0.3);
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<div class="nav">
+  <img src="logo.png" alt="Piaxiom Logo">
+  <div>
+    <a href="#">Solutions</a>
+    <a href="#">Technology</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
 <div class="hero">
   <h1>Piaxiom AI</h1>
-  <p>
-    Self-evolving industrial intelligence that transforms machines into autonomous, learning systems.
-  </p>
+  <p>Autonomous intelligence layer for industrial systems.</p>
   <a class="cta" href="mailto:your@email.com">Get in Touch</a>
 </div>
 
+<!-- SOLUTIONS -->
 <section>
-  <h2>Intelligent Manufacturing</h2>
-  <p>We bring AI directly into industrial environments to continuously optimize performance.</p>
-
+  <h2>Solutions</h2>
   <div class="grid">
     <div class="card">
-      <h3>Predictive AI</h3>
-      <p>Prevent failures before they occur using deep learning models.</p>
+      <h3>Predictive Maintenance</h3>
+      <p>AI models that predict machine failures before downtime occurs.</p>
+    </div>
+    <div class="card">
+      <h3>MES + AI Integration</h3>
+      <p>Bridge PLCs, MES, and AI into a unified intelligent system.</p>
     </div>
     <div class="card">
       <h3>Real-Time Intelligence</h3>
-      <p>Monitor machine data streams and detect anomalies instantly.</p>
-    </div>
-    <div class="card">
-      <h3>MES Integration</h3>
-      <p>Seamless connectivity between PLCs, MES, and AI pipelines.</p>
+      <p>Continuous monitoring and anomaly detection at scale.</p>
     </div>
   </div>
 </section>
 
+<!-- HOW IT WORKS -->
 <section>
-  <h2>Built for Industry</h2>
+  <h2>How Piaxiom Works</h2>
   <p>
-    Piaxiom is designed for high-performance manufacturing environments, combining edge computing with scalable AI infrastructure.
+    Data flows from machines → processed via edge systems → analyzed by AI models → feedback loop continuously improves operations.
   </p>
 </section>
 
+<!-- ARCHITECTURE (YOUR USP 🔥) -->
+<section>
+  <h2>Architecture</h2>
+  <p>
+    Built on scalable microservices with edge computing, cloud AI, and real-time data pipelines.
+  </p>
+</section>
+
+<!-- CTA -->
 <section>
   <h2>Start Your AI Transformation</h2>
   <a class="cta" href="mailto:your@email.com">Contact Piaxiom</a>
