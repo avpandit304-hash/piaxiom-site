@@ -11,44 +11,127 @@
       background: #0b0f19;
       color: #ffffff;
     }
-    .container {
-      padding: 100px 20px;
+
+    section {
+      padding: 80px 20px;
       text-align: center;
     }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
     h1 {
       font-size: 52px;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
     }
+
+    h2 {
+      font-size: 32px;
+    }
+
     p {
-      font-size: 20px;
       color: #aaa;
       max-width: 700px;
       margin: auto;
       line-height: 1.6;
     }
+
     .cta {
-      margin-top: 40px;
+      margin-top: 30px;
       display: inline-block;
       padding: 14px 28px;
       background: #4f46e5;
       color: white;
       text-decoration: none;
       border-radius: 10px;
-      font-size: 16px;
     }
-    .cta:hover {
-      background: #6366f1;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
     }
+
+    .card {
+      background: #111827;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Piaxiom AI</h1>
-    <p>
-      Building self-evolving industrial AI systems that continuously optimize manufacturing performance, reduce downtime, and unlock intelligent automation.
-    </p>
-    <a class="cta" href="mailto:avpandit304@gmail.com">Contact Us</a>
+
+<!-- HERO -->
+<section>
+  <h1>Piaxiom AI</h1>
+  <p>
+    Building self-evolving industrial AI systems that continuously optimize manufacturing performance, reduce downtime, and unlock intelligent automation.
+  </p>
+  <a class="cta" href="mailto:your@email.com">Contact Us</a>
+</section>
+
+<!-- WHAT WE DO -->
+<section>
+  <h2>What We Do</h2>
+  <p>
+    Piaxiom develops intelligent systems that integrate with manufacturing environments to monitor, analyze, and continuously improve machine performance using advanced AI models.
+  </p>
+</section>
+
+<!-- SOLUTIONS -->
+<section>
+  <h2>Solutions</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Predictive Maintenance</h3>
+      <p>Detect failures before they happen using AI-driven insights.</p>
+    </div>
+    <div class="card">
+      <h3>MES Integration</h3>
+      <p>Seamlessly connect PLCs, machines, and enterprise systems.</p>
+    </div>
+    <div class="card">
+      <h3>Real-time Monitoring</h3>
+      <p>Track performance, OEE, and anomalies in real time.</p>
+    </div>
   </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <h2>How It Works</h2>
+  <p>
+    Piaxiom collects real-time data from machines, processes it through AI models, and continuously learns from operational patterns to improve efficiency and reduce downtime automatically.
+  </p>
+</section>
+
+<!-- WHY PIAXIOM -->
+<section>
+  <h2>Why Piaxiom</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Self-Evolving AI</h3>
+      <p>Systems improve with every cycle of production data.</p>
+    </div>
+    <div class="card">
+      <h3>Industrial Focus</h3>
+      <p>Designed specifically for manufacturing environments.</p>
+    </div>
+    <div class="card">
+      <h3>Scalable Architecture</h3>
+      <p>Built for cloud, edge, and hybrid deployments.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <h2>Get in Touch</h2>
+  <p>Interested in transforming your manufacturing operations?</p>
+  <a class="cta" href="mailto:your@email.com">Contact Us</a>
+</section>
+
 </body>
 </html>
